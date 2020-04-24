@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+## This config file is taken from the Manjaro-i3 distribution.
+
 NAME=$(basename "$0")
 VER="0.5"
 
