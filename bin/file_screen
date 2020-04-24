@@ -1,0 +1,16 @@
+#!/bin/bash
+
+for filename in * 
+do
+	if [[ -f $filename ]]
+	then
+		if [ $(grep -i "JOB_LOG" $filename | wc -l) -gt 0 ]
+		then
+		echo "########"
+		echo "Found: $filename"
+		grep -i "JOB_LOG" $filename
+		fi
+
+	fi
+
+done

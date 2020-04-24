@@ -1,0 +1,22 @@
+#!/bin/bash
+
+window_id="$1"
+window_class="$2"
+window_instance="$3"
+#window_title="$(xwininfo -id "$window_id" | sed ' /^xwininfo/!d ; s,.*"\(.*\)".*,\1,')"
+
+window_title=$(xtitle "$window_id")
+
+case "$window_title" in
+	"ranger — Konsole")
+		echo "state=floating"
+		echo "center=on"
+		echo "rectangle=789x512+264+130"
+		;;
+	"konsole-tiled — Konsole")
+		echo "state=floating"
+		echo "rectangle=649x432+323+180"
+		;;
+esac
+
+

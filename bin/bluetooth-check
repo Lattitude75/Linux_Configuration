@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+while true; do
+if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
+then
+  echo ""
+  sleep 5
+else
+  if [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]
+  then
+    echo "%{F#17ffec}"
+    sleep 5
+  else
+    echo "%{F#1506ba}"
+    sleep 5
+  fi
+fi
+done
